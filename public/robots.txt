@@ -1,2 +1,4 @@
-User-Agent: *
+User-agent: *
 Disallow:
+
+Sitemap: https://aaron18-portfolio.pages.dev/sitemap.xml

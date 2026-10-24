@@ -1,49 +1,13 @@
 @import "tailwindcss";
 
-:root {
-  --bg: #0b1426;
-  --card: #121d36;
-  --text: #e6ebf5;
-  --muted: #9aa8c4;
-  --accent: #4da3ff;
+@theme {
+  --color-page: #0b1426;
+  --color-card: #121d36;
+  --color-ink: #e6ebf5;
+  --color-muted: #9aa8c4;
+  --color-accent: #4da3ff;
 }
-
-* { box-sizing: border-box; }
 
 body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: system-ui, sans-serif;
-  line-height: 1.6;
-}
-
-main {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 3rem 1.25rem;
-}
-
-h1 { font-size: 2.5rem; margin: 0 0 0.5rem; }
-header p { color: var(--muted); font-size: 1.15rem; }
-
-h2 { margin-top: 3rem; }
-
-article {
-  background: var(--card);
-  border-radius: 12px;
-  padding: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-article h3 { margin: 0 0 0.25rem; }
-article p { margin: 0 0 0.75rem; color: var(--muted); }
-
-a { color: var(--accent); }
-
-footer { margin-top: 3rem; }
-
-.tiers a {
-  display: inline-block;
-  margin-left: 0.75rem;
+  @apply bg-page text-ink font-sans leading-relaxed;
 }
