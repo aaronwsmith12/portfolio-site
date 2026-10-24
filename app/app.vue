@@ -12,6 +12,43 @@ useSeoMeta({
   ogUrl: "https://aaron18-portfolio.pages.dev/",
   twitterCard: "summary",
 });
+
+const siteUrl = "https://aaron18-portfolio.pages.dev/";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}#website`,
+      name: "Aaron | LAMP Developer",
+      url: siteUrl,
+      inLanguage: "en",
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}#person`,
+      name: "Aaron",
+      url: siteUrl,
+      jobTitle: "LAMP Developer",
+      description:
+        "LAMP developer building WordPress and WooCommerce plugins, payment gateways and media tools.",
+      knowsAbout: [
+        "PHP",
+        "MySQL",
+        "jQuery",
+        "AJAX",
+        "WordPress plugin development",
+        "WooCommerce payment gateways",
+      ],
+      sameAs: ["https://github.com/aaronwsmith12"],
+    },
+  ],
+};
+
+useHead({
+  script: [{ type: "application/ld+json", innerHTML: JSON.stringify(schema) }],
+});
 </script>
 
 <template>
@@ -136,7 +173,7 @@ useSeoMeta({
       <p class="mb-3">
         I'm a WordPress and WooCommerce developer. Each project above is a real,
         working plugin or theme that I built myself, so you can look at the code
-        or try
+        or try the live demos.
       </p>
     </footer>
   </main>
