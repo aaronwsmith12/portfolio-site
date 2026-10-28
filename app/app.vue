@@ -49,6 +49,29 @@ const schema = {
 useHead({
   script: [{ type: "application/ld+json", innerHTML: JSON.stringify(schema) }],
 });
+
+// Google Tag Manager, container GTM-N96CFK52
+useHead({
+  script: [
+    {
+      // innerHTML = the text placed inside the <script> tag.
+      // This is Google's standard loader: it creates a new <script> that downloads gtm.js for our container.
+      innerHTML: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-N96CFK52');`,
+    },
+  ],
+  noscript: [
+    {
+      // tagPosition "bodyOpen" = put this right after <body> opens, which is where Google wants it.
+      // It's a fallback for visitors who have JavaScript turned off.
+      tagPosition: "bodyOpen",
+      innerHTML: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N96CFK52" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+    },
+  ],
+});
 </script>
 
 <template>
